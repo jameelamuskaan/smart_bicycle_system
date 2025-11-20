@@ -69,23 +69,3 @@ This project offers a **digital, managed, and scalable solution** to replace man
 
 ---
 
-## 🧑‍💻 Team — *CreatiVerse*
-
-| Role | Name |
-|------|------|
-| **Project Lead & Backend Developer** | *Jameela Muskaan* |
-| Frontend Developers | Sritanvi, Nihari |
-| UI/UX Designer | Sindhu Sri |
-| Coordinator & Presentation Lead | Thanmay |
-
----
-
-## 📷 Preview (to be added)
-
-Create an `assets/` folder and add:
-
-
-Then reference like:
-
-```markdown
-![Flowchart](assets/flowchart.png)
