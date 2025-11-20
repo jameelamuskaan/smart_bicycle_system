@@ -1,0 +1,211 @@
+
+:root {
+    --primary: #2c342b;
+    --accent: #48d7e4;
+    --bg: #dfefb8;
+    --card: rgb(117, 137, 117);
+    --text:#ffffff;
+    --radius: 12px;
+    --shadow: 0 3px 14px rgba(0,0,0,0.08);
+}
+body {
+    font-family: "Lucida Console", "Courier New", monospace;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem 1.2rem 1rem;
+    border-radius: 0 0 var(--radius) var(--radius);
+    box-shadow: var(--shadow);
+}
+.card {
+  max-width: 400px;  /* limit card max width */
+  margin: 2rem auto; /* center horizontally */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+  background: rgb(56, 77, 50);
+}
+
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;         /* keep input fields full width inside card */
+  max-width: 320px;    /* limit max width of inputs */
+  padding: 10px 15px;  /* adjust padding for comfort */
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Optional: Center the form inside the card */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Dashboard card - wider and responsive */
+.dashboard-card {
+  max-width: 900px;   /* wider for tables and more content */
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+  background: rgb(49, 56, 44);
+  overflow-x: auto;   /* allow horizontal scroll if content too wide */
+}
+/* Wallet page card - medium width, centered */
+.wallet-card {
+  max-width: 720px;
+  width: 90%;
+  background: rgb(49, 56, 44);
+  border-radius: 12px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+  padding: 2rem;
+  margin: 2rem auto;
+  box-sizing: border-box;
+  overflow-x: auto; /* in case tables or content are wide */
+}
+/* Apply to all links */
+a {
+  color: inherit;           /* Makes link color same as surrounding text */
+  text-decoration: none;    /* Removes underline */
+}
+
+/* Optionally, add hover effect if you want */
+a:hover {
+  color: var(--primary);    /* Or any color you prefer for hover */
+  text-decoration: underline; /* Optional underline on hover */
+}
+.navbar {
+  background-color: var(--primary);
+  padding: 1rem 2rem;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.nav-list li a:hover {
+  color: var(--accent);
+}
+
+/* Admin page card - wider for tables and controls */
+.admin-card {
+  max-width: 1100px;
+  width: 95%;
+  background: rgb(49, 56, 44);
+  border-radius: 12px;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+  padding: 2rem;
+  margin: 2rem auto;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+input, button, select {
+    font-size: 1rem;
+    padding: .7rem 1rem;
+    margin: .5rem 0;
+    border-radius: var(--radius);
+    border: 1px solid #ddd;
+    outline: none;
+    width: 100%;
+}
+input:focus, select:focus {
+    border-color: var(--primary);
+}
+button {
+    background:rgb(33, 40, 33) ;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    transition: background .2s;
+}
+button:hover {
+    background: var(--accent);
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+.table th, .table td {
+    padding: .9rem .7rem;
+    border: 1px solid #eee;
+    text-align: left;
+}
+.plant-header {
+  width: 100%;
+  text-align: center;         /* Center the image horizontally */
+  margin-top: 1rem;
+  margin-bottom: 1rem;        /* Add space between header and content */
+}
+
+.plant-top {
+  width: 100%;                /* Make the plant stretch across the page */
+  max-width: 1450px;           /* Or whatever width you prefer */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  /* No animation or keyframes here */
+}
+.login-image-container {
+  display: flex;
+  justify-content: space-between; /* push images to far left and far right */
+  align-items: flex-start;        /* align images at the top */
+  padding: 0 1rem;                /* optional horizontal padding */
+  margin-top: 0rem;               /* space below header */
+  max-width: 100%;                /* expand container full width */
+}
+
+.login-image {
+  width: 250px;                   /* adjust image size */
+  height: auto;
+}
+.login-page-wrapper {
+  position: relative;    /* Creates positioning context for absolute children */
+  min-height: 100vh;     /* Ensure wrapper covers full viewport height */
+  padding-bottom: 150px; /* Optional space for bottom image so it does not overlap content */
+}
+
+.bottom-left-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 450px;       /* adjust size as needed */
+  height: auto;
+  z-index: 10;
+}
+
+/* Example sway animation */
+
+.status-idle { color: #38b000; font-weight: bold; }
+.status-in_use { color: #ef233c; font-weight: bold; }
+.status-maintenance { color: #f9a825; font-weight: bold; }
+.qr-img { width: 70px; height: 70px; }
+.nav {
+    margin-bottom: 1rem;
+    text-align: right;
+    background:none;
+}
+.nav a { text-decoration: none; color: #0077b6; margin: 0 1rem; font-weight: 500; }
+.nav a:hover { text-decoration: underline; }
+

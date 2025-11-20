@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/wallet">Wallet</a></li>
+            <li><a href="/scan">Scan QR</a></li>
+            <li><a href="/admin">Admin</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <h1>Dashboard - Welcome {{ username }}!</h1>
+</header>
+
+<div class="plant-container">
+    <img src="{{ url_for('static', filename='img/12.png') }}" alt="Decorative Plant" class="plant-top" />
+</div>
+
+<div class="dashboard-card">
+    <h2>Available Bikes</h2>
+    <table class="table">
+        <tr>
+            <th>Bike ID</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>QR Code</th>
+        </tr>
+        {% for bike in bikes %}
+        <tr>
+            <td>{{ bike.bike_id }}</td>
+            <td>{{ bike.location }}</td>
+            <td class="status-{{ bike.status|replace(' ', '_') }}">{{ bike.status|capitalize }}</td>
+            <td>
+                <img class="qr-img" src="{{ url_for('static', filename='qr/' ~ bike.qr_code ~ '.png') }}" alt="{{ bike.qr_code }}">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
+

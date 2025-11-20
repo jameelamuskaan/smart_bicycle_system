@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ride Summary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/wallet">Wallet</a></li>
+            <li><a href="/scan">Scan QR</a></li>
+            <li><a href="/admin">Admin</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <h1>Ride Summary</h1>
+</header>
+
+<div class="card">
+    {% if ride %}
+        <h2>Last Ride Details</h2>
+        <p><strong>Bike ID:</strong> {{ ride.bike_id }}</p>
+        <p><strong>Start Time:</strong> {{ ride.start_time }}</p>
+        <p><strong>End Time:</strong> {{ ride.end_time }}</p>
+        <p><strong>Fare:</strong> ₹{{ ride.fare }}</p>
+        <p><strong>Status:</strong> {{ ride.status|capitalize }}</p>
+    {% else %}
+        <p>No ride history found.</p>
+    {% endif %}
+    <br>
+    <a href="/dashboard"><button>Back to Dashboard</button></a>
+</div>
+</body>
+</html>
